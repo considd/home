@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siddharth Pandey — Future F1 Race Engineer</title>
+<meta name="description" content="Siddharth Pandey — Grade XII student from Southwest Delhi on the road to becoming an F1 Race Engineer. VIT Vellore, Pravega Racing, MRF Motorsport, Cranfield, Maranello.">
+<meta name="keywords" content="Siddharth Pandey, F1 Race Engineer, Formula One, Ferrari, VIT Vellore, Pravega Racing, MRF Motorsport, Cranfield, motorsport engineering, Delhi">
+<meta name="author" content="Siddharth Pandey">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://considd.github.io/home/">
+<meta property="og:title" content="Siddharth Pandey — Future F1 Race Engineer">
+<meta property="og:description" content="Southwest Delhi → VIT Vellore → Pravega Racing → MRF Motorsport → Cranfield → Maranello. The roadmap of a future Formula One Race Engineer.">
+<meta property="og:url" content="https://considd.github.io/home/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Siddharth Pandey — Future F1 Race Engineer">
+<meta name="twitter:description" content="Southwest Delhi → Maranello. The roadmap of a future Formula One Race Engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+:root {
+  --red: #E8001D;
+  --red-light: #FF2A44;
+  --red-pale: #FFF0F2;
+  --yellow: #FFD100;
+  --ink: #0F0E0C;
+  --ink2: #2A2825;
+  --gray: #6B6860;
+  --gray-light: #9E9B94;
+  --cream: #FAF8F4;
+  --white: #FFFFFF;
+  --border: rgba(15,14,12,0.1);
+  --border-strong: rgba(15,14,12,0.2);
+  --bebas: 'Bebas Neue', sans-serif;
+  --dm: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--dm);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 56px;
+  background: rgba(250,248,244,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wordmark {
+  font-family: var(--bebas);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.nav-wordmark span { color: var(--red); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--red); }
+
+.nav-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+}
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  padding-top: 56px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DIAGONAL RED SLASH */
+.hero-slash {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55%;
+  height: 130%;
+  background: linear-gradient(135deg, var(--red) 0%, #C0001A 100%);
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+.hero-slash-inner {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 18px,
+    rgba(255,255,255,0.03) 18px,
+    rgba(255,255,255,0.03) 19px
+  );
+}
+
+/* CIRCUIT LINES BG */
+.hero-circuit {
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.06;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 80px 0 80px;
+  gap: 0;
+}
+
+.hero-left { padding-right: 40px; }
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--red);
+}
+
+h1 {
+  font-family: var(--bebas);
+  font-size: clamp(80px, 11vw, 150px);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+h1 .last { color: var(--red); }
+
+.hero-descriptor {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.75;
+  max-width: 400px;
+  margin-bottom: 44px;
+}
+
+.hero-descriptor strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  color: var(--ink2);
+  background: transparent;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+.chip.red {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+/* ─── F1 CAR SVG ─── */
+.hero-car-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 360px;
+}
+
+.f1-car-svg {
+  width: 100%;
+  max-width: 560px;
+  filter: drop-shadow(0px 24px 40px rgba(232,0,29,0.22));
+  transform-origin: center;
+}
+
+/* SPEED LINES */
+.speed-lines {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.speed-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red));
+  border-radius: 2px;
+  opacity: 0.25;
+}
+
+/* HERO BOTTOM STRIP */
+.hero-strip {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.strip-item {
+  padding: 24px 32px;
+  border-right: 1px solid var(--border);
+}
+
+.strip-item:last-child { border-right: none; }
+
+.strip-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: 6px;
+}
+
+.strip-val {
+  font-family: var(--bebas);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.strip-val.red { color: var(--red); }
+
+/* ─── SECTION COMMONS ─── */
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--bebas);
+  font-size: clamp(48px, 6vw, 80px);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+
+.section-title .dim { color: var(--gray-light); }
+
+/* ─── ABOUT ─── */
+#about {
+  padding: 120px 80px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.about-body {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--gray);
+}
+
+.about-body p + p { margin-top: 20px; }
+.about-body strong { color: var(--ink); font-weight: 500; }
+.about-body .r { color: var(--red); font-weight: 500; }
+
+.about-sidebar {}
+
+.sidebar-block {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-block:first-child { border-top: 1px solid var(--border); }
+
+.sb-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: 6px;
+}
+
+.sb-val {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ─── ROADMAP ─── */
+#roadmap {
+  padding: 120px 80px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* BIG FADED "ROADMAP" BEHIND */
+.roadmap-bg-text {
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  font-family: var(--bebas);
+  font-size: 260px;
+  letter-spacing: -0.02em;
+  color: rgba(15,14,12,0.04);
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* connecting line */
+.roadmap-grid::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 44px;
+  right: 44px;
+  height: 1px;
+  background: var(--border-strong);
+  z-index: 0;
+}
+
+.road-step {
+  padding: 0 24px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.road-step:last-child { padding-right: 0; }
+
+.road-dot-wrap {
+  margin-bottom: 24px;
+}
+
+.road-dot {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-strong);
+  background: var(--white);
+  font-family: var(--bebas);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+  line-height: 1.1;
+  position: relative;
+}
+
+.road-dot.active {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+  box-shadow: 0 0 0 6px rgba(232,0,29,0.12);
+}
+
+.road-dot.destination {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+  box-shadow: 0 0 0 6px rgba(15,14,12,0.08);
+}
+
+.road-dot .dot-num {
+  font-size: 9px;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.road-label {
+  font-family: var(--bebas);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.road-sub {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.road-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--red-pale);
+  color: var(--red);
+  margin-top: 10px;
+}
+
+.road-step.active .road-tag {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* ─── ACADEMICS ─── */
+#academics {
+  padding: 120px 80px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.acad-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.acad-left {}
+
+.acad-card {
+  padding: 36px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.acad-card:hover {
+  border-color: var(--red);
+  transform: translateX(4px);
+}
+
+.acad-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red);
+}
+
+.acad-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gray-light);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.acad-title {
+  font-family: var(--bebas);
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.acad-desc {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.acad-right {}
+
+.quote-panel {
+  background: var(--red);
+  padding: 44px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-panel::before {
+  content: '"';
+  position: absolute;
+  bottom: -40px; right: 16px;
+  font-family: var(--bebas);
+  font-size: 220px;
+  color: rgba(255,255,255,0.07);
+  line-height: 1;
+}
+
+.qp-text {
+  font-family: var(--dm);
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.qp-by {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.skills-panel {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 32px;
+}
+
+.sp-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sk-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.sk-name {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.sk-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--border-strong);
+  position: relative;
+}
+
+.sk-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--red);
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+.sk-pct {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gray-light);
+  width: 30px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ─── INTERESTS ─── */
+#interests {
+  padding: 120px 80px;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.int-card {
+  background: var(--white);
+  padding: 40px 36px;
+  border: 1px solid var(--border);
+  transition: border-color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.int-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.int-card:hover::after { transform: scaleX(1); }
+.int-card:hover { border-color: rgba(232,0,29,0.25); }
+
+.int-icon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.int-title {
+  font-family: var(--bebas);
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.int-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+/* ─── FERRARI EGG ─── */
+.egg-btn {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 500;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--red);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(232,0,29,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  padding: 0;
+}
+
+.egg-btn svg {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.egg-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(232,0,29,0.5);
+}
+
+.egg-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,14,12,0.7);
+  z-index: 900;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+.egg-overlay.open { display: flex; }
+
+.egg-box {
+  background: var(--white);
+  border-top: 4px solid var(--red);
+  padding: 52px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+}
+
+.egg-close-btn {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: none;
+  border: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--gray-light);
+  cursor: pointer;
+}
+
+.egg-close-btn:hover { color: var(--red); }
+
+.egg-tag {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.egg-q {
+  font-family: var(--bebas);
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.egg-attr {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--gray-light);
+  text-transform: uppercase;
+}
+
+.egg-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+}
+
+.egg-facts {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gray);
+  line-height: 2.2;
+  letter-spacing: 0.06em;
+}
+
+.egg-facts .r { color: var(--red); font-weight: 500; }
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 40px 80px;
+  background: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: var(--bebas);
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+.footer-name span { color: var(--red); }
+
+.footer-note {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  text-align: right;
+  line-height: 2;
+}
+
+.footer-note .r { color: var(--red); }
+
+/* ─── PARALLAX LAYERS ─── */
+.parallax-layer { will-change: transform; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-wordmark">SIDDHARTH <span>PANDEY</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#interests">Interests</a></li>
+  </ul>
+  <div class="nav-tag">Delhi → Maranello</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+
+  <!-- RED SLASH BG -->
+  <div class="hero-slash parallax-layer" id="slash">
+    <div class="hero-slash-inner"></div>
+  </div>
+
+  <!-- CIRCUIT LINES -->
+  <svg class="hero-circuit parallax-layer" id="circuit" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 100 L200 100 L200 200 L400 200 L400 150 L550 150" stroke="#0F0E0C" stroke-width="1.5" fill="none"/>
+    <path d="M50 300 L100 300 L100 400 L300 400 L300 350 L500 350" stroke="#0F0E0C" stroke-width="1.5" fill="none"/>
+    <path d="M150 500 L250 500 L250 600 L450 600" stroke="#0F0E0C" stroke-width="1.5" fill="none"/>
+    <circle cx="200" cy="100" r="4" fill="#0F0E0C"/>
+    <circle cx="400" cy="200" r="4" fill="#0F0E0C"/>
+    <circle cx="100" cy="300" r="4" fill="#0F0E0C"/>
+    <circle cx="300" cy="400" r="4" fill="#0F0E0C"/>
+    <circle cx="250" cy="500" r="4" fill="#0F0E0C"/>
+    <path d="M0 180 L80 180 L80 280 L200 280" stroke="#0F0E0C" stroke-width="0.8" stroke-dasharray="4 4" fill="none"/>
+    <path d="M0 450 L120 450 L120 520 L300 520" stroke="#0F0E0C" stroke-width="0.8" stroke-dasharray="4 4" fill="none"/>
+  </svg>
+
+  <!-- MAIN CONTENT -->
+  <div class="hero-content">
+    <div class="hero-left" id="hero-text">
+      <div class="hero-eyebrow">Future F1 Race Engineer</div>
+      <h1>SIDDHARTH<br><span class="last">PANDEY</span></h1>
+      <p class="hero-descriptor">
+        Grade XII, Southwest Delhi.<br>
+        <strong>Destination: Pit Wall.</strong> The path runs through VIT Vellore, Pravega Racing, MRF Motorsport, and a master's at Cranfield or Oxford Brookes — before the paddock in Milton Keynes or Maranello.
+      </p>
+      <div class="hero-chips">
+        <span class="chip red">Scuderia Ferrari</span>
+        <span class="chip">Race Engineering</span>
+        <span class="chip">Vehicle Dynamics</span>
+        <span class="chip">PCM</span>
+        <span class="chip">KV No. 2 SW Delhi</span>
+      </div>
+    </div>
+
+    <!-- F1 CAR -->
+    <div class="hero-car-wrap" id="car-wrap">
+      <!-- Speed lines -->
+      <div class="speed-lines" id="speed-lines">
+        <div class="speed-line" style="width:120px"></div>
+        <div class="speed-line" style="width:80px"></div>
+        <div class="speed-line" style="width:160px"></div>
+        <div class="speed-line" style="width:60px"></div>
+        <div class="speed-line" style="width:100px"></div>
+        <div class="speed-line" style="width:140px"></div>
+      </div>
+
+      <!-- THE CAR -->
+      <svg class="f1-car-svg" id="f1car" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- FLOOR / UNDERTRAY -->
+        <ellipse cx="350" cy="230" rx="290" ry="16" fill="rgba(0,0,0,0.06)"/>
+
+        <!-- FRONT WING ASSEMBLY -->
+        <!-- Main plane -->
+        <rect x="55" y="180" width="100" height="6" rx="2" fill="#E8001D"/>
+        <!-- Endplates -->
+        <rect x="52" y="172" width="5" height="22" rx="1" fill="#C0001A"/>
+        <rect x="155" y="172" width="5" height="22" rx="1" fill="#C0001A"/>
+        <!-- Upper flaps -->
+        <path d="M58 174 L152 170 L152 174 L58 178 Z" fill="#C0001A"/>
+        <path d="M62 170 L150 166 L150 170 L62 174 Z" fill="#A0001A"/>
+        <!-- Front wing pillar to nose -->
+        <path d="M105 177 L155 170 L175 165 L185 162" stroke="#C0001A" stroke-width="3" fill="none"/>
+
+        <!-- NOSE CONE -->
+        <path d="M100 178 Q130 172 170 162 L220 155 L250 150 L250 160 L220 165 L175 170 L130 182 Z" fill="#E8001D"/>
+
+        <!-- CHASSIS / MONOCOQUE -->
+        <path d="M245 148 L530 142 L545 155 L540 200 L250 206 Z" fill="#E8001D"/>
+        <!-- Sidepod Left -->
+        <path d="M300 155 L500 150 L515 168 L510 200 L295 204 Z" fill="#C0001A"/>
+        <!-- Chassis top detail -->
+        <rect x="280" y="148" width="220" height="8" rx="2" fill="#A0001A"/>
+
+        <!-- AIRBOX / HALO -->
+        <!-- Halo arch -->
+        <path d="M340 148 Q370 118 400 148" stroke="#1A1A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Airbox intake -->
+        <path d="M360 140 L380 140 L385 148 L355 148 Z" fill="#1A1A1A"/>
+        <!-- Airbox fin -->
+        <rect x="368" y="118" width="4" height="22" rx="1" fill="#1A1A1A"/>
+
+        <!-- COCKPIT -->
+        <path d="M330 148 Q365 135 395 148" fill="#0F0E0C"/>
+
+        <!-- REAR WING -->
+        <!-- Main plane -->
+        <rect x="545" y="120" width="90" height="10" rx="2" fill="#E8001D"/>
+        <!-- Upper flap -->
+        <rect x="548" y="110" width="84" height="7" rx="2" fill="#C0001A"/>
+        <!-- Endplates -->
+        <rect x="541" y="108" width="6" height="85" rx="1" fill="#A0001A"/>
+        <rect x="634" y="108" width="6" height="85" rx="1" fill="#A0001A"/>
+        <!-- DRS beam -->
+        <rect x="575" y="130" width="4" height="40" fill="#1A1A1A"/>
+        <!-- Beam wing -->
+        <rect x="548" y="172" width="84" height="5" rx="1" fill="#C0001A"/>
+
+        <!-- REAR DIFFUSER -->
+        <path d="M520 200 L640 192 L640 210 L515 212 Z" fill="#1A1A1A"/>
+
+        <!-- FRONT-LEFT WHEEL ASSEMBLY -->
+        <!-- Tire -->
+        <ellipse cx="160" cy="210" rx="36" ry="36" fill="#1A1A1A"/>
+        <ellipse cx="160" cy="210" rx="24" ry="24" fill="#2A2A2A"/>
+        <!-- Rim -->
+        <ellipse cx="160" cy="210" rx="18" ry="18" fill="#D0D0D0"/>
+        <ellipse cx="160" cy="210" rx="12" ry="12" fill="#E8001D"/>
+        <!-- Wheel nut -->
+        <ellipse cx="160" cy="210" rx="5" ry="5" fill="#FFD100"/>
+        <!-- Brake disc glow -->
+        <ellipse cx="160" cy="210" rx="14" ry="14" fill="none" stroke="rgba(255,120,0,0.2)" stroke-width="3"/>
+        <!-- Suspension / push rod -->
+        <line x1="192" y1="205" x2="240" y2="185" stroke="#888" stroke-width="2"/>
+        <line x1="192" y1="215" x2="240" y2="200" stroke="#888" stroke-width="2"/>
+
+        <!-- FRONT-RIGHT WHEEL (perspective-implied, slightly smaller) -->
+        <ellipse cx="148" cy="200" rx="28" ry="10" fill="#111" opacity="0.5"/>
+
+        <!-- REAR-LEFT WHEEL -->
+        <ellipse cx="545" cy="212" rx="40" ry="40" fill="#1A1A1A"/>
+        <ellipse cx="545" cy="212" rx="26" ry="26" fill="#2A2A2A"/>
+        <ellipse cx="545" cy="212" rx="20" ry="20" fill="#D0D0D0"/>
+        <ellipse cx="545" cy="212" rx="13" ry="13" fill="#E8001D"/>
+        <ellipse cx="545" cy="212" rx="5.5" ry="5.5" fill="#FFD100"/>
+        <!-- Brake disc glow -->
+        <ellipse cx="545" cy="212" rx="16" ry="16" fill="none" stroke="rgba(255,120,0,0.15)" stroke-width="3"/>
+        <!-- Suspension -->
+        <line x1="510" y1="205" x2="470" y2="192" stroke="#888" stroke-width="2.5"/>
+        <line x1="510" y1="220" x2="470" y2="210" stroke="#888" stroke-width="2.5"/>
+
+        <!-- REAR-RIGHT WHEEL (implied) -->
+        <ellipse cx="530" cy="200" rx="32" ry="11" fill="#111" opacity="0.45"/>
+
+        <!-- FLOOR EDGE (bargeboard area) -->
+        <path d="M260 204 Q310 210 360 206 L480 202 L510 200 L510 210 L480 212 L260 215 Z" fill="#A0001A"/>
+
+        <!-- NUMBER + LIVERY DETAILS -->
+        <!-- White stripe on sidepod -->
+        <rect x="310" y="165" width="160" height="5" rx="1" fill="rgba(255,255,255,0.15)"/>
+        <!-- Yellow accent line -->
+        <rect x="250" y="200" width="280" height="3" rx="1" fill="#FFD100"/>
+
+        <!-- FERRARI LOGO AREA (simplified shield) -->
+        <rect x="370" y="158" width="28" height="22" rx="2" fill="#FFD100"/>
+        <path d="M378 162 L390 162 L390 172 L384 177 L378 172 Z" fill="#E8001D"/>
+
+        <!-- DRIVER NUMBER (16 — Leclerc, why not) -->
+        <text x="315" y="183" font-family="'Bebas Neue',sans-serif" font-size="22" fill="white" opacity="0.9" letter-spacing="2">16</text>
+
+        <!-- EXHAUST OUTLET -->
+        <ellipse cx="528" cy="176" rx="6" ry="4" fill="#333"/>
+        <ellipse cx="528" cy="176" rx="4" ry="2.5" fill="#FF6600" opacity="0.5"/>
+
+        <!-- TOP BODY HIGHLIGHT -->
+        <path d="M260 150 Q390 142 520 144" stroke="rgba(255,255,255,0.12)" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- STRIP -->
+  <div class="hero-strip" id="hero-strip">
+    <div class="strip-item">
+      <div class="strip-label">Current Status</div>
+      <div class="strip-val red">Grade XII</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-label">Base</div>
+      <div class="strip-val">SW Delhi</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-label">Target</div>
+      <div class="strip-val">F1 Race Engineer</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-label">Allegiance</div>
+      <div class="strip-val red">Scuderia Ferrari</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">01 — Who</div>
+  <h2 class="section-title">SIDDHARTH<br><span class="dim">PANDEY</span></h2>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>
+        Siddharth Pandey is a Grade XII student from <strong>Southwest Delhi</strong>, currently at Kendriya Vidyalaya No. 2. He is not particularly invested in what the school means. He is very invested in what comes after it.
+      </p>
+      <p>
+        He watches a Formula One race the way an engineer watches a race — not for the drama, but for the <span class="r">strategy</span>. The undercut, the tyre delta, the moment the race engineer says "box" and the whole thing pivots. That's the job he wants.
+      </p>
+      <p>
+        The path is mapped out. <strong>VIT Vellore</strong> for engineering. <strong>Pravega Racing</strong> for the first taste of competition. <strong>MRF Motorsport or TVS</strong> for real trackside experience. A master's at <strong>Cranfield or Oxford Brookes</strong>. And then the paddock — Milton Keynes or Maranello, wherever the work takes him.
+      </p>
+      <p>
+        He has not made it yet. He's going to.
+      </p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-block">
+        <div class="sb-label">Full Name</div>
+        <div class="sb-val">Siddharth Pandey</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sb-label">Location</div>
+        <div class="sb-val">Southwest Delhi, India</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sb-label">School</div>
+        <div class="sb-val">KV No. 2, Southwest Delhi</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sb-label">Stream</div>
+        <div class="sb-val">PCM — Science</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sb-label">Team</div>
+        <div class="sb-val" style="color:var(--red)">Scuderia Ferrari HP</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sb-label">Goal</div>
+        <div class="sb-val">F1 Race Engineer — Pit Wall</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="roadmap-bg-text">ROAD</div>
+  <div class="section-eyebrow">02 — The Plan</div>
+  <h2 class="section-title">THE<br><span class="dim">ROADMAP</span></h2>
+
+  <div class="roadmap-grid">
+    <div class="road-step active">
+      <div class="road-dot-wrap">
+        <div class="road-dot active">
+          <span class="dot-num">NOW</span>
+          XII
+        </div>
+      </div>
+      <div class="road-label">Grade XII</div>
+      <div class="road-sub">PCM. Boards. KV No. 2. The qualifying lap — you don't win here, but everything starts here.</div>
+      <div class="road-tag">Active</div>
+    </div>
+
+    <div class="road-step">
+      <div class="road-dot-wrap">
+        <div class="road-dot">
+          <span class="dot-num">NEXT</span>
+          VIT
+        </div>
+      </div>
+      <div class="road-label">VIT Vellore</div>
+      <div class="road-sub">Engineering degree. Mechanical or Automotive. Where the theory becomes real.</div>
+      <div class="road-tag">2027</div>
+    </div>
+
+    <div class="road-step">
+      <div class="road-dot-wrap">
+        <div class="road-dot">
+          <span class="dot-num">T+2</span>
+          RACE
+        </div>
+      </div>
+      <div class="road-label">Pravega Racing</div>
+      <div class="road-sub">VIT's Formula Student team. First car. First race weekend. First taste of the paddock.</div>
+      <div class="road-tag">~2027</div>
+    </div>
+
+    <div class="road-step">
+      <div class="road-dot-wrap">
+        <div class="road-dot">
+          <span class="dot-num">T+4</span>
+          MRF
+        </div>
+      </div>
+      <div class="road-label">MRF / TVS Motorsport</div>
+      <div class="road-sub">Indian motorsport infrastructure. Real cars. Real data. The bridge between campus and the professional paddock.</div>
+      <div class="road-tag">~2030</div>
+    </div>
+
+    <div class="road-step">
+      <div class="road-dot-wrap">
+        <div class="road-dot destination">
+          <span class="dot-num">END</span>
+          F1
+        </div>
+      </div>
+      <div class="road-label">Cranfield / Oxford Brookes → F1</div>
+      <div class="road-sub">MSc Motorsport Engineering. Then Milton Keynes or Maranello. Pit wall. The voice in the headset.</div>
+      <div class="road-tag">The Destination</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+  <div class="section-eyebrow">03 — Profile</div>
+  <h2 class="section-title">INTERESTS<br><span class="dim">&amp; PROFILE</span></h2>
+  <div class="interests-grid">
+    <div class="int-card">
+      <div class="int-icon">[ 01 / CREATIVE ]</div>
+      <div class="int-title">Digital Art</div>
+      <div class="int-body">Builds visuals the same way he thinks about cars — with intention. Digital art is where the precision of engineering meets something that doesn't need to go fast to be worth looking at.</div>
+    </div>
+    <div class="int-card">
+      <div class="int-icon">[ 02 / COLLECT ]</div>
+      <div class="int-title">Diecast Enthusiast</div>
+      <div class="int-body">1:18, 1:43 — scale doesn't matter as much as the detail. He collects the cars he'll one day engineer. The shelf is a roadmap in miniature, Ferrari liveries front and centre.</div>
+    </div>
+    <div class="int-card">
+      <div class="int-icon">[ 03 / BUILD ]</div>
+      <div class="int-title">Software Development</div>
+      <div class="int-body">Writes code the way a race engineer thinks — systematically, with a clear objective. Software is another kind of machine. You build it, you test it, you find out what breaks under pressure.</div>
+    </div>
+    <div class="int-card">
+      <div class="int-icon">[ 04 / CRAFT ]</div>
+      <div class="int-title">Writing</div>
+      <div class="int-body">Puts words together with the same care he puts into everything else. Writing is thinking made visible — and he thinks carefully. About racing, about engineering, about the distance between Delhi and Maranello.</div>
+    </div>
+    <div class="int-card">
+      <div class="int-icon">[ 05 / HARDWARE ]</div>
+      <div class="int-title">Embedded &amp; Robotics</div>
+      <div class="int-body">Microcontrollers, sensors, systems that respond to the real world in real time. The same instincts that go into a robot go into a race car. He's been practising both.</div>
+    </div>
+    <div class="int-card">
+      <div class="int-icon">[ 06 / RIDE ]</div>
+      <div class="int-title">Biking</div>
+      <div class="int-body">Two wheels, open road, Southwest Delhi at speed. The closest thing to motorsport you can do on a budget. He understands the road from the saddle — which is a decent place to start understanding it from the pit wall.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">SIDDHARTH <span>PANDEY</span></div>
+  <div class="footer-note">
+    Built by his best friend. Grade XII, 2025.<br>
+    <span class="r">Forza Ferrari. Forza Sid.</span>
+  </div>
+</footer>
+
+<!-- FERRARI EGG -->
+<button class="egg-btn" onclick="openEgg()" title="Scuderia Ferrari">
+  <svg viewBox="0 0 192.744 192.744" xmlns="http://www.w3.org/2000/svg" width="26" height="26" style="filter: invert(1)"><path fill="#ffffff" d="M0 0h192.744v192.744H0z"></path><path stroke="#000000" stroke-width=".216" stroke-miterlimit="2.613" d="M87.053 118.908l-.334.816.223 1.48.759 3.313 1.314 4.369 1.092 2.61 1.462 3.332 1.037 1.962 1.592 2.888 1.906 3.219 1.5 2.075 1.258 1.684.056.926-.166.759-.703.277-2.111.111-3.702-.221-3.054-.39-2.684-.481-3.259-.925-1.647-.722-1.092-.481-1.241-.223-1.425.056-.758.333h-1.037l-2.462-.389-1.407-.481-1.536-.111-2.444-.054-1.851-.168h-1.703l-1.684.111-1.148.48-.815.223-.278.389.056.76.777 1.257 1.463 2.019.87.369 1.37.982 1.573.871 1.703.554 2.444.056 2.184-.223 1.851-.424 1.574-.5.666.333.315.647.555.167 1.351-.056 1.703.112.871.277 1.036-.277 3.369.423 2.295.334 3.758.816 2.739.813 2.704.927 2.385 1.092.927.666 2.463.111 1.313-.333.703-1.426.758-1.739-.218-1.407-.926-1.759-1.24-2.555-.984-2.665-.722-3-.313-2.572v-2.499l.259-2.943.334-1.482-.39-1.257-.813-.648-1.629-1.203-1.151-.815-.218-1.574-.538-1.684-1.02-1.648-1.091-1.406-1.369-1.313-1.741-1.316-1.962-1.463-1.037-.499-1.036-.314-.87.147-.759.5z"></path><path d="M80.722 8.528l-.018.722-.759.167-.981-.129-1.481.314-1.11.352-.889.056-.278.389.315.537.667.148.629-.185.722-.315.741-.037 1.573.074 1.203.37 1.425.352 2.092.944.186.445-.222.351-.981.352-.592.278-1.055.703-1.61.852-1.962 1.389-2.24 1.018-1.777 1.167-1.61.704-1.518.37-1.333.037-1.833.037-.704.185-.407.852-.315.926-.352.629-.889 1.333-.852 1.48-.574.722-.056.833.056 1.166v1.24l.759.685.667.352.796-.056 1.296-.352 1.462-.444 1.981-.796.796.037.185.5-.185.481-.667.352-2.018.759-1.518.444-.296.5-.056.537.5.444 1.055.129h.852l1.073-.037 1.167-.278 1.685-.889 1.111-.222.944-.186.722.241 1.055-.055 1.037.13.852.5 1.333.129 1.74.537.944.129 1.462-.259 1.87.13.814.314.445.759-.093.981-.222 1.203-.444 1.388-.629 1.74-.629 1.907-.667 1.74-.444 1.203-1.518 2.37-1.833 2.313-1.647 2.277-2.092 2.091-1.925 1.629-1.222 1.295-.647 2.129-.907 1.074-1.148.814-1.388 1.147-2.129 1.296-1.795.907-1.147 1.314-.815 1.056-.814.5-1.147.574-.74-.167-1.462-.667-1.629-1.055-2.388-1.055-2.684-1.407-1.388-1.055-1.722-1.388-1.888-1.555-2.036-.74-1.795-.315-2.295.481-1.629.907-1.407.981-.722 1.795-.5 1.389-.574 2.128-.647 1.295-.648 1.981-.092 2.37-.574 1.388-.648 2.203-.574 2.203-1.055 2.055-.574 2.036-.333 2.536-.907 2.129-.574 1.222-.074 1.222-.074 2.055v3.591l-.408 1.48.241 1.296-.094 2.129.741 1.703.574.407 1.055-.334.98-.889 1.407-1.703 1.222-1.962.481-1.629-.314-1.314-.408-1.629-.5-1.962-.481-2.054-.259-1.556v-1.462l.333-1.647.814-2.518.814-1.314.741-.666.573-.889 1.056-.093.5-.314.74-.667.814-.722.74-.981.314-1.146.26-.981.074-1.314.241-1.147.574-.722.574-.167.74.241 1.056.574 1.147 1.314 1.222 1.795 1.388 1.629 1.481 1.314 1.314 1.055 1.292.573.407.815-.407.408-1.389-.315-1.962-.167-2.536-.5-2.443-.481-2.943-.093-1.721.093-1.313.814-1.388 1.222-1.148 1.962-.889 2.221-.092 1.629.5 2.943 1.147 3.758.574 2.943.722 2.869.5 2.019.241 1.888.647 2.129.5 3.258.481 1.147 1.24.981 1.148 1.146 1.295 1.963.907 2.295 1.388 2.036 2.037 1.962 1.48.907.98.074.814-.241.5-1.146.555-.981.333-1.388v-3.185l-.407-.907c-.074 0-.074-.573-.074-.647l-.167-.573-.667-.98-1.222-1.223-2.277-.98-.833-.26-.148-1.388.074-.889-1.555-1.796-.981-2.296-.815-3.259-.666-3.017-1.129-2.37-.407-2.869.647-1.721 1.148-.648h.888l1.314 1.148 1.888 1.148 1.962.722 4.738 2.295 2.296 1.314v1.222l2.11 1.221 2.703.907h5.646l-.407 1.056-.24.573.722 1.37 1.388 2.055 2.222 2.202 2.684 2.944 2.295 2.035 4.295 3.295 3.48 1.869 2.61 1.389 3.351 2.277 3.091 2.203 2.666 2.258 2.776 3.758.129 1.572.629 1.63 1.703 1.222 1.556.611.963-.131.761-.739 1.092-1.166.26-1.573 1.295-2.24.277-1.722.205-1.906.129-1.5.426-.942.869-.426h.834l.055.629-.609.666-.537 1.443-.408.889v1.092l-.147 2.314-.332 1.166-1.019 1.758-1.371 2.26-1.368 2.461-.813 3.203-.408 3.351.408 3.739.537 2.185 1.295 2.869 1.647 3.406 1.295 2.665 1.776 2.796 2.109 2.592.408.888v.611l-.277.759-.74 1.222-1.166 1.629-2.389 3.074-2.389 2.59-2.184 2.39-.943.555-1.926.74-1.148 1.093-.611 1.24-1.369 1.702-1.553 1.702-1.907 1.981-1.167 2.036-.685 2.055-.407 1.702.074 1.37.814.87h3l1.294-.129 1.354-.813 1.776-.815.276-.685h.611l.943-.408.889-.832.482-3.258-.279-.687-.129-.685.482.129.535.148.557-.408.889-.555.943-1.222 1.166-1.647.611-1.499.129-1.223.76-.556 1.092-.61.889-.537.74-1.499 1.574-1.646 2.941-2.722 2.239-1.499 2.261-1.24.534-.537.205-.556.479-.61-.334-.813-.071-1.5-.298-1.405-.352-.814-.777-1.333-1.239-1.556-.61-1.166-.13-1.223v-1.646l.276-.943.74-2.536.758-1.222.816-.481 1.498-.944 1.777-1.518 2.389-2.035 1.629-1.703 1.646-1.907 1.703-1.925 1.223-2.166 1.018-1.852.963-2.109.685-2.334.205-2.164.129-1.647.556-.537.61-.147.537.353.481 1.147.129 1.572.224 1.499-.147 1.02-.131 1.573v3.351l.407 2.647.479.685.408-.056.203-.481-.277-1.092v-1.853l.556-1.555.26-2.258.276-1.574.354-.74h.407l.332.333.334 1.296.276 1.24-.129 1.962-.408 2.666-1.239 2.593-1.146 2.461-.687 2.11-.129 1.296.129 1.499.479 1.443h.89l.463-.629-.261-.685-.202-1.223.813-1.093.945-1.296.629-1.221 1.498-2.39 1.223-2.185.537-2.389.48-3.146v-3.129l-.609-2.185-1.223-1.703-.148-.813.557-.277.686.332.889 1.093 1.092 1.98.463 2.312.277 3.073.686 2.129.074.056.943 2.11.61.222.276-.555-.073-.334-.464-1.572-.073-1.573.073-2.313.408-2.592v-1.296l-.147-1.092-1.093-2.186-.944-1.573.334-.61 1.298-.277 1.774-.813 1.907-1.02 1.703-1.499 2.185-2.942 1.239-2.443 1.019-2.332.334-3.739.074-3.351-.537-4.146-.629-2.999-.537-3.073-.334-3.202.261-2.036.555-2.536 1.147-2.518 1.646-2.591.611-1.647.129-.814-.535-.74-.756-.355v1.167l-.611.685-1.092 1.629-.611.407-1.703 2.055-.684 1.092-.814 1.833-.889.148-.814-.481-.482-2.185.131-2.517.556-2.333 1.353-2.185 2.737-4.091 1.632-3.332.202-2.333-.26-.74-.479.481-.814 2.036-1.24 2.055-1.834 1.5-2.109 2.036-3.146 3.684-.61-.056-.203-.629-.074-1.5.203-2.795.963-3.128 1.703-3.48 2.258-2.795 2.795-2.388.26-.555-.334-.259-1.424.74-1.168.759-1.98 1.703-2.461 2.185-1.76 2.388-1.721 3.128-.943 2.536-.277 2.518-.131 3.406.814 3.554.814 3.073 1.573 4.832 1.019 5.794.611 4.423v2.39l-.261 2.517-.405 2.057-.761 2.312-2.869 3.609-2.926 2.665-3.757 2.11-3.61.203-.479-1.759-1.295-2.536-1.777-2.443-1.166-1.442-1.555-2.11-3.353-3.201-3.405-2.795-1.498-1.168-4.703-3.184-6.756-5.665-3.685-4.572-4.034-6.608-1.093-3.961.276-2.462.556-.481 1.427.962 2.258 1.092 1.834-.074 2.108.963 2.259 1.37 1.166.944 1.5 1.037 1.555.204.352-.685-.408-.074-.48.204-.758-.481-.668-1.018-.961-1.574-1.852-1.702-1.832-.685-1.02-.204.205-.537h1.424l1.647.537 2.388 1.573 1.094.481.406-.556-.687-.944-1.851-1.648-2.869-1.499-3.463-1.351-.684-.555.684-.481 1.556.759 2.871.481 3.071 1.222 1.629.814 2.869.407 2.056-.277 1.146-.537 1.574-.963.686-.666.074-.481-.637.052-.608.629-2.037.667-1.777.277-1.5-.204-1.443-1.147-1.295-1.518-1.555-1.147-2.332-.481-2.24-.759-.963-.611.074-.536.889.129h1.98l1.979-.129h2.037l1.093-.204.889.74 1.424.352h1.166l.537-.407-.943-.278-1.166-.759-1.223-1.147-1.98-1.037-1.629-.204-1.498-.204-.557-.333 1.094-.611h1.775l1.371.407 1.352.686 2.184.944 2.184.074 1.166-.555.334-.741-.889-.407-1.832-.074-1.574-.537-1.368-1.166-1.5-.759-1.979-.333-1.703-.611-.74-.962.129-.481 1.094.222 1.369.407.814.611 1.166.129.129-.611-1.221-.962-.354-.87 1.646.259 1.555.814 1.98.222.76 1.425 2.035 1.222.111-.019.445-.185.537-.333-.261-.407-.76.055-.685-.944-1.371-2.11-2.387-2.128-2.443-1.092-.686-.814-1.5-1.777-1.369-.74-.203-.685.609-.407 1.445.333 2.85.814 1.371.481.889 1.24 1.424.741h1.093l1.444.407 1.572-.278.611-.537-.889-.759-1.295-.333-1.5-.204-.89-.759-1.166-1.703-.276-1.092-1.5-1.352-1.629-1.037-1.853-1.148-2.035-1.906-.129-.556h.461l2.666 2.11 2.722 1.573 1.444 1.092L120 45.325l1.646.888.945.278.48-.759-.684-.259-1.427-1.296-.407-1.443-1.498-1.629-1.24-1.037-.611-1.555-2.109-3.146-2.869-2.518-.131-.814 1.018.129 1.445.741 2.312.962 2.389.13 1.777.833 1.906.333 1.629-.481-.129-.685-1.852-.408-1.63-.74-3.276-1.573-1.775-.962-.945-1.148.334-.408.48.333.74.278.963.074h1.574l1.35-.148 2.057-.129 1.572.611 1.629 1.166.686.204.074-.611-.557-.555-1.629-1.5-2.535-1.296-1.832-.204-3.48-.204-.813-.962-1.776-1.777-1.98-1.351-.74-.685.611-.481.943.407 1.702.889 1.925.685 2.592.611h2.24l1.852 2.055 1.5.888.537-.555-2.037-2.999-3.203-2.313-2.666-.629-2.258-2.37-1.98-1.166-2.721-.685 1.5-1.295 2.664-.889 1.98-.611.463-.61-.259-.481-1.094-.277-1.035-.204-7.7.148-1.369-1.518-1.556-1.018-1.979-.889-2.593-.408H96.9l-.61-.814-2.11-2.258L91.644 2.9l-1.555 2.592-.074.814.741.962.074.814-.536.481-1.722.129-3.129-.889-3.073-.663-1.426.055-2.332.481.277.815 1.296-.056.537.093z"></path><path stroke="#000000" stroke-width=".216" stroke-miterlimit="2.613" d="M88.997 7.676l-.149-1.573-2.24-2.721-.685-.204-.481.685.074.815-.759.684-.074.945.889.481 1.24.888h2.185z"></path></svg>
+</button>
+
+<div class="egg-overlay" id="eggOverlay">
+  <div class="egg-box">
+    <button class="egg-close-btn" onclick="closeEgg()">[ CLOSE × ]</button>
+    <div class="egg-tag">// Ferrari Archive — Classified</div>
+    <div class="egg-q" id="egg-q">Quote loading...</div>
+    <div class="egg-attr" id="egg-attr">—</div>
+    <div class="egg-divider"></div>
+    <div class="egg-facts">
+      FOUNDED &nbsp;<span class="r">›</span>&nbsp; Maranello, 1929<br>
+      CONSTRUCTORS TITLES &nbsp;<span class="r">›</span>&nbsp; 16<br>
+      RACE WINS &nbsp;<span class="r">›</span>&nbsp; 242+<br>
+      SIDDHARTH'S ALLEGIANCE &nbsp;<span class="r">›</span>&nbsp; TOTAL &amp; UNCONDITIONAL<br>
+      FUTURE FERRARI ENGINEER &nbsp;<span class="r">›</span>&nbsp; SIDDHARTH PANDEY
+    </div>
+  </div>
+</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// ── HERO ENTRANCE ──
+const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+tl.from("#hero-text .hero-eyebrow", { opacity: 0, y: 20, duration: 0.8, delay: 0.2 })
+  .from("#hero-text h1", { opacity: 0, y: 60, duration: 1 }, "-=0.5")
+  .from("#hero-text .hero-descriptor", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+  .from("#hero-text .hero-chips .chip", { opacity: 0, y: 20, stagger: 0.08, duration: 0.6 }, "-=0.5")
+  .from("#f1car", { opacity: 0, x: 80, duration: 1.2, ease: "power3.out" }, "-=1")
+  .from("#speed-lines .speed-line", { scaleX: 0, transformOrigin: "right", stagger: 0.06, duration: 0.5 }, "-=0.8")
+  .from("#hero-strip .strip-item", { opacity: 0, y: 30, stagger: 0.1, duration: 0.6 }, "-=0.5");
+
+// ── PARALLAX — SLASH ──
+gsap.to("#slash", {
+  yPercent: 28,
+  ease: "none",
+  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+});
+
+// ── PARALLAX — CIRCUIT ──
+gsap.to("#circuit", {
+  yPercent: 18,
+  ease: "none",
+  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+});
+
+// ── PARALLAX — CAR (floats opposite direction) ──
+gsap.to("#car-wrap", {
+  yPercent: -14,
+  ease: "none",
+  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+});
+
+// ── CAR HOVER FLOAT ──
+gsap.to("#f1car", {
+  y: -10,
+  duration: 2.2,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
+
+// ── SPEED LINES ANIMATION ──
+gsap.to("#speed-lines .speed-line", {
+  opacity: 0.45,
+  stagger: { each: 0.15, repeat: -1, yoyo: true },
+  duration: 0.8,
+  ease: "sine.inOut"
+});
+
+// ── SECTION FADE-INS ──
+gsap.utils.toArray(".about-body, .about-sidebar, .int-card, .road-step").forEach(el => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 40,
+    duration: 0.9,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: el,
+      start: "top 88%",
+      toggleActions: "play none none none"
+    }
+  });
+});
+
+// ── ROADMAP DOTS DRAW IN ──
+gsap.utils.toArray(".road-dot").forEach((dot, i) => {
+  gsap.from(dot, {
+    scale: 0,
+    opacity: 0,
+    duration: 0.6,
+    ease: "back.out(1.7)",
+    delay: i * 0.1,
+    scrollTrigger: {
+      trigger: ".roadmap-grid",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+});
+
+// ── FERRARI EASTER EGG ──
+const quotes = [
+  { q: "When you are fitted in a racing car and you race to win, second or third place is not enough.", attr: "AYRTON SENNA" },
+  { q: "Ferrari is not just a car. It is a symbol of what happens when men refuse to accept ordinary limits.", attr: "ENZO FERRARI" },
+  { q: "I have never been able to think of any other colour for a racing car except red.", attr: "ENZO FERRARI" },
+  { q: "The race engineer doesn't steer. The race engineer wins.", attr: "PIT WALL WISDOM" },
+  { q: "Racing is life. Anything before or after is just waiting.", attr: "STEVE MCQUEEN" },
+  { q: "Siddharth Pandey — Future Ferrari Race Engineer. Filed under: Inevitable.", attr: "HIS BEST FRIEND, 2025" }
+];
+
+let last = -1;
+function openEgg() {
+  let i;
+  do { i = Math.floor(Math.random() * quotes.length); } while (i === last);
+  last = i;
+  document.getElementById("egg-q").textContent = "\u201C" + quotes[i].q + "\u201D";
+  document.getElementById("egg-attr").textContent = "\u2014 " + quotes[i].attr;
+  document.getElementById("eggOverlay").classList.add("open");
+  gsap.fromTo(".egg-box", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" });
+}
+
+function closeEgg() {
+  gsap.to(".egg-box", {
+    opacity: 0, y: 20, duration: 0.3, ease: "expo.in",
+    onComplete: () => document.getElementById("eggOverlay").classList.remove("open")
+  });
+}
+
+document.getElementById("eggOverlay").addEventListener("click", function(e) {
+  if (e.target === this) closeEgg();
+});
+</script>
+</body>
+</html>
