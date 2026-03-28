@@ -856,6 +856,200 @@ footer {
 
 /* ─── PARALLAX LAYERS ─── */
 .parallax-layer { will-change: transform; }
+
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE — ≤768px
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  nav {
+    padding: 0 20px;
+    height: 50px;
+  }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 9px; }
+  .nav-tag { display: none; }
+
+  /* ── HERO ── */
+  #hero { min-height: 100svh; }
+
+  .hero-slash {
+    width: 100%;
+    right: 0;
+    top: 55%;
+    height: 60%;
+    clip-path: polygon(0% 18%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding: 28px 24px 0 24px;
+    gap: 0;
+    align-items: start;
+  }
+
+  .hero-left { padding-right: 0; }
+
+  .hero-eyebrow { font-size: 9px; margin-bottom: 12px; }
+
+  h1 {
+    font-size: clamp(68px, 20vw, 100px);
+    margin-bottom: 16px;
+  }
+
+  .hero-descriptor {
+    font-size: 13px;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .hero-chips { gap: 6px; }
+  .chip { font-size: 8px; padding: 5px 10px; }
+
+  /* ── HERO CAR ── */
+  .hero-car-wrap {
+    height: 200px;
+    margin-top: 12px;
+  }
+
+  .f1-car-svg { max-width: 340px; }
+
+  .speed-lines { display: none; }
+
+  /* ── HERO STRIP ── */
+  .hero-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strip-item {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .strip-item:nth-child(2) { border-right: none; }
+  .strip-item:nth-child(3) { border-bottom: none; }
+  .strip-item:nth-child(4) { border-right: none; border-bottom: none; }
+
+  .strip-val { font-size: 17px; }
+
+  /* ── SECTION COMMONS ── */
+  .section-title {
+    font-size: clamp(40px, 12vw, 60px);
+    margin-bottom: 36px;
+  }
+
+  /* ── ABOUT ── */
+  #about { padding: 72px 24px; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-body { font-size: 15px; }
+
+  /* ── ROADMAP ── */
+  #roadmap { padding: 72px 24px; overflow: hidden; }
+
+  .roadmap-bg-text { font-size: 120px; top: 20px; }
+
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* vertical connector line instead of horizontal */
+  .roadmap-grid::before {
+    top: 44px;
+    left: 43px;
+    right: auto;
+    bottom: 44px;
+    width: 1px;
+    height: auto;
+  }
+
+  .road-step {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0 20px;
+    padding: 0 0 32px 0;
+    align-items: start;
+  }
+
+  .road-step:last-child { padding-bottom: 0; }
+
+  .road-dot-wrap {
+    margin-bottom: 0;
+    grid-row: 1 / 4;
+    grid-column: 1;
+  }
+
+  .road-label {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 8px;
+  }
+
+  .road-sub {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .road-tag {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  /* ── ACADEMICS ── */
+  #academics { padding: 72px 24px; }
+
+  .acad-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .acad-card { padding: 24px; }
+
+  .quote-panel { padding: 32px 28px; }
+  .qp-text { font-size: 17px; }
+
+  /* ── INTERESTS ── */
+  #interests { padding: 72px 24px; }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .int-card { padding: 28px 24px; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 24px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-note { text-align: center; }
+
+  /* ── EGG BUTTON ── */
+  .egg-btn { bottom: 20px; right: 20px; width: 46px; height: 46px; }
+  .egg-box { padding: 36px 28px; }
+  .egg-q { font-size: 24px; }
+
+  /* ── DISABLE PARALLAX ON MOBILE (perf) ── */
+  .parallax-layer { transform: none !important; }
+}
+
+/* ── Extra small phones ── */
+@media (max-width: 380px) {
+  h1 { font-size: 62px; }
+  .hero-car-wrap { height: 160px; }
+  .f1-car-svg { max-width: 280px; }
+}
 </style>
 </head>
 <body>
@@ -1255,26 +1449,26 @@ tl.from("#hero-text .hero-eyebrow", { opacity: 0, y: 20, duration: 0.8, delay: 0
   .from("#speed-lines .speed-line", { scaleX: 0, transformOrigin: "right", stagger: 0.06, duration: 0.5 }, "-=0.8")
   .from("#hero-strip .strip-item", { opacity: 0, y: 30, stagger: 0.1, duration: 0.6 }, "-=0.5");
 
-// ── PARALLAX — SLASH ──
-gsap.to("#slash", {
-  yPercent: 28,
-  ease: "none",
-  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
-});
+// ── PARALLAX — desktop only ──
+if (window.innerWidth > 768) {
+  gsap.to("#slash", {
+    yPercent: 28,
+    ease: "none",
+    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+  });
 
-// ── PARALLAX — CIRCUIT ──
-gsap.to("#circuit", {
-  yPercent: 18,
-  ease: "none",
-  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
-});
+  gsap.to("#circuit", {
+    yPercent: 18,
+    ease: "none",
+    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+  });
 
-// ── PARALLAX — CAR (floats opposite direction) ──
-gsap.to("#car-wrap", {
-  yPercent: -14,
-  ease: "none",
-  scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
-});
+  gsap.to("#car-wrap", {
+    yPercent: -14,
+    ease: "none",
+    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+  });
+}
 
 // ── CAR HOVER FLOAT ──
 gsap.to("#f1car", {
